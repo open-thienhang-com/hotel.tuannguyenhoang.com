@@ -13,7 +13,7 @@ export const mockRooms: Room[] = [
     capacity: 1,
     description: 'Cozy single room with city view',
     createdAt: '2024-01-01',
-    updatedAt: '2024-01-01'
+    updatedAt: '2024-01-01',
   },
   {
     id: '2',
@@ -26,7 +26,7 @@ export const mockRooms: Room[] = [
     capacity: 2,
     description: 'Comfortable double room with garden view',
     createdAt: '2024-01-01',
-    updatedAt: '2024-01-01'
+    updatedAt: '2024-01-01',
   },
   {
     id: '3',
@@ -39,7 +39,7 @@ export const mockRooms: Room[] = [
     capacity: 4,
     description: 'Luxury suite with panoramic city view',
     createdAt: '2024-01-01',
-    updatedAt: '2024-01-01'
+    updatedAt: '2024-01-01',
   },
   {
     id: '4',
@@ -52,8 +52,8 @@ export const mockRooms: Room[] = [
     capacity: 3,
     description: 'Deluxe room with premium amenities',
     createdAt: '2024-01-01',
-    updatedAt: '2024-01-01'
-  }
+    updatedAt: '2024-01-01',
+  },
 ]
 
 export const mockCustomers: Customer[] = [
@@ -70,7 +70,7 @@ export const mockCustomers: Customer[] = [
     totalBookings: 5,
     totalSpent: 2500,
     createdAt: '2024-01-01',
-    updatedAt: '2024-01-01'
+    updatedAt: '2024-01-01',
   },
   {
     id: '2',
@@ -82,8 +82,8 @@ export const mockCustomers: Customer[] = [
     totalBookings: 2,
     totalSpent: 800,
     createdAt: '2024-01-01',
-    updatedAt: '2024-01-01'
-  }
+    updatedAt: '2024-01-01',
+  },
 ]
 
 export const mockBookings: Booking[] = [
@@ -100,7 +100,7 @@ export const mockBookings: Booking[] = [
     paidAmount: 750,
     paymentStatus: 'paid',
     createdAt: '2024-07-15',
-    updatedAt: '2024-07-20'
+    updatedAt: '2024-07-20',
   },
   {
     id: '2',
@@ -115,8 +115,8 @@ export const mockBookings: Booking[] = [
     paidAmount: 0,
     paymentStatus: 'pending',
     createdAt: '2024-07-20',
-    updatedAt: '2024-07-20'
-  }
+    updatedAt: '2024-07-20',
+  },
 ]
 
 export const mockStaff: Staff[] = [
@@ -132,7 +132,7 @@ export const mockStaff: Staff[] = [
     hireDate: '2023-01-01',
     status: 'active',
     createdAt: '2023-01-01',
-    updatedAt: '2024-01-01'
+    updatedAt: '2024-01-01',
   },
   {
     id: '2',
@@ -146,8 +146,8 @@ export const mockStaff: Staff[] = [
     hireDate: '2023-06-01',
     status: 'active',
     createdAt: '2023-06-01',
-    updatedAt: '2024-01-01'
-  }
+    updatedAt: '2024-01-01',
+  },
 ]
 
 export const mockDashboardStats: DashboardStats = {
@@ -160,5 +160,5 @@ export const mockDashboardStats: DashboardStats = {
   totalRevenue: 12500,
   monthlyRevenue: 8500,
   occupancyRate: 75,
-  averageRate: 180
+  averageRate: 180,
 }

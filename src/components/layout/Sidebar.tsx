@@ -1,18 +1,17 @@
-import React from 'react'
+import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { useUIStore } from '@/stores/ui'
-import { 
-  Home, 
-  Bed, 
-  Calendar, 
-  Users, 
-  UserCheck, 
-  DollarSign, 
-  Settings,
+import {
+  Bed,
+  Calendar,
   ChevronLeft,
-  ChevronRight
+  ChevronRight,
+  DollarSign,
+  Home,
+  Settings,
+  UserCheck,
+  Users,
 } from 'lucide-react'
-import { Button } from '@/components/ui/button'
 
 const sidebarItems = [
   { icon: Home, label: 'Dashboard', href: '/' },
@@ -33,10 +32,12 @@ export function Sidebar({ currentPath, onNavigate }: SidebarProps) {
   const { sidebarOpen, toggleSidebar } = useUIStore()
 
   return (
-    <div className={cn(
-      "bg-card border-r border-border transition-all duration-300 ease-in-out",
-      sidebarOpen ? "w-64" : "w-16"
-    )}>
+    <div
+      className={cn(
+        'bg-card border-r border-border transition-all duration-300 ease-in-out',
+        sidebarOpen ? 'w-64' : 'w-16'
+      )}
+    >
       <div className="flex flex-col h-full">
         {/* Header */}
         <div className="flex items-center justify-between p-4 border-b border-border">
@@ -62,20 +63,14 @@ export function Sidebar({ currentPath, onNavigate }: SidebarProps) {
         {/* Navigation */}
         <nav className="flex-1 p-4">
           <ul className="space-y-2">
-            {sidebarItems.map((item) => (
+            {sidebarItems.map(item => (
               <li key={item.href}>
                 <Button
-                  variant={currentPath === item.href ? "default" : "ghost"}
-                  className={cn(
-                    "w-full justify-start",
-                    !sidebarOpen && "px-2"
-                  )}
+                  variant={currentPath === item.href ? 'default' : 'ghost'}
+                  className={cn('w-full justify-start', !sidebarOpen && 'px-2')}
                   onClick={() => onNavigate(item.href)}
                 >
-                  <item.icon className={cn(
-                    "h-4 w-4",
-                    sidebarOpen && "mr-2"
-                  )} />
+                  <item.icon className={cn('h-4 w-4', sidebarOpen && 'mr-2')} />
                   {sidebarOpen && item.label}
                 </Button>
               </li>

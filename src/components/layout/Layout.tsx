@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import { ReactNode } from 'react'
 import { Sidebar } from './Sidebar'
 import { Topbar } from './Topbar'
 import { useUIStore } from '@/stores/ui'
@@ -10,17 +10,22 @@ interface LayoutProps {
   onNavigate: (path: string) => void
 }
 
-export function Layout({ children, title, currentPath, onNavigate }: LayoutProps) {
+export function Layout({
+  children,
+  title,
+  currentPath,
+  onNavigate,
+}: LayoutProps) {
   const { sidebarOpen } = useUIStore()
+
+  console.log('sidebarOpen:', sidebarOpen)
 
   return (
     <div className="flex h-screen bg-background">
       <Sidebar currentPath={currentPath} onNavigate={onNavigate} />
       <div className="flex-1 flex flex-col overflow-hidden">
         <Topbar title={title} />
-        <main className="flex-1 overflow-auto p-6">
-          {children}
-        </main>
+        <main className="flex-1 overflow-auto p-6">{children}</main>
       </div>
     </div>
   )

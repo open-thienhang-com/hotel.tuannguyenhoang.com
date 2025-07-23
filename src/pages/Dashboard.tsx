@@ -1,13 +1,16 @@
-import React from 'react'
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card'
 import { mockDashboardStats } from '@/lib/mock-data'
-import { 
-  Bed, 
-  Users, 
-  Calendar, 
+import {
+  Bed,
+  Calendar,
   DollarSign,
-  TrendingUp,
-  TrendingDown
+  TrendingUp
 } from 'lucide-react'
 
 export function Dashboard() {
@@ -18,26 +21,26 @@ export function Dashboard() {
       title: 'Total Rooms',
       value: stats.totalRooms,
       icon: Bed,
-      description: `${stats.occupiedRooms} occupied, ${stats.availableRooms} available`
+      description: `${stats.occupiedRooms} occupied, ${stats.availableRooms} available`,
     },
     {
       title: 'Today Check-ins',
       value: stats.todayCheckIns,
       icon: Calendar,
-      description: `${stats.todayCheckOuts} check-outs today`
+      description: `${stats.todayCheckOuts} check-outs today`,
     },
     {
       title: 'Occupancy Rate',
       value: `${stats.occupancyRate}%`,
       icon: TrendingUp,
-      description: 'Current occupancy level'
+      description: 'Current occupancy level',
     },
     {
       title: 'Monthly Revenue',
       value: `$${stats.monthlyRevenue.toLocaleString()}`,
       icon: DollarSign,
-      description: `Average rate: $${stats.averageRate}`
-    }
+      description: `Average rate: $${stats.averageRate}`,
+    },
   ]
 
   return (
@@ -109,23 +112,27 @@ export function Dashboard() {
         <Card className="col-span-3">
           <CardHeader>
             <CardTitle>Room Status</CardTitle>
-            <CardDescription>
-              Current status of all rooms
-            </CardDescription>
+            <CardDescription>Current status of all rooms</CardDescription>
           </CardHeader>
           <CardContent>
             <div className="space-y-4">
               <div className="flex items-center justify-between">
                 <span className="text-sm">Available</span>
-                <span className="text-sm font-medium">{stats.availableRooms}</span>
+                <span className="text-sm font-medium">
+                  {stats.availableRooms}
+                </span>
               </div>
               <div className="flex items-center justify-between">
                 <span className="text-sm">Occupied</span>
-                <span className="text-sm font-medium">{stats.occupiedRooms}</span>
+                <span className="text-sm font-medium">
+                  {stats.occupiedRooms}
+                </span>
               </div>
               <div className="flex items-center justify-between">
                 <span className="text-sm">Maintenance</span>
-                <span className="text-sm font-medium">{stats.maintenanceRooms}</span>
+                <span className="text-sm font-medium">
+                  {stats.maintenanceRooms}
+                </span>
               </div>
             </div>
           </CardContent>

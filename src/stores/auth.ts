@@ -16,13 +16,13 @@ interface AuthState {
   setUser: (user: User) => void
 }
 
-export const useAuthStore = create<AuthState>((set) => ({
+export const useAuthStore = create<AuthState>(set => ({
   user: {
     id: '1',
     name: 'John Doe',
     email: 'john@hotel.com',
     role: 'admin',
-    avatar: 'https://github.com/shadcn.png'
+    avatar: 'https://github.com/shadcn.png',
   },
   isAuthenticated: true,
   login: async (email: string, password: string) => {
@@ -32,14 +32,15 @@ export const useAuthStore = create<AuthState>((set) => ({
       name: 'John Doe',
       email: email,
       role: 'admin',
-      avatar: 'https://github.com/shadcn.png'
+      avatar: 'https://github.com/shadcn.png',
     }
     set({ user: mockUser, isAuthenticated: true })
+    console.log('password:', password)
   },
   logout: () => {
     set({ user: null, isAuthenticated: false })
   },
   setUser: (user: User) => {
     set({ user })
-  }
+  },
 }))

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { Layout } from '@/components/layout/Layout'
 import { Dashboard } from '@/pages/Dashboard'
 import { Rooms } from '@/pages/Rooms'
@@ -21,27 +21,63 @@ function App() {
 
   const getPageTitle = (path: string) => {
     switch (path) {
-      case '/': return 'Dashboard'
-      case '/rooms': return 'Rooms'
-      case '/bookings': return 'Bookings'
-      case '/customers': return 'Customers'
-      case '/staff': return 'Staff'
-      case '/revenue': return 'Revenue'
-      case '/settings': return 'Settings'
-      default: return 'Dashboard'
+      case '/':
+        return 'Dashboard'
+      case '/rooms':
+        return 'Rooms'
+      case '/bookings':
+        return 'Bookings'
+      case '/customers':
+        return 'Customers'
+      case '/staff':
+        return 'Staff'
+      case '/revenue':
+        return 'Revenue'
+      case '/settings':
+        return 'Settings'
+      default:
+        return 'Dashboard'
     }
   }
 
   const renderPage = () => {
     switch (currentPath) {
-      case '/': return <Dashboard />
-      case '/rooms': return <Rooms />
-      case '/bookings': return <Bookings />
-      case '/customers': return <div className="p-8"><h2 className="text-2xl font-bold">Customers Page</h2><p>Coming soon...</p></div>
-      case '/staff': return <div className="p-8"><h2 className="text-2xl font-bold">Staff Page</h2><p>Coming soon...</p></div>
-      case '/revenue': return <div className="p-8"><h2 className="text-2xl font-bold">Revenue Page</h2><p>Coming soon...</p></div>
-      case '/settings': return <div className="p-8"><h2 className="text-2xl font-bold">Settings Page</h2><p>Coming soon...</p></div>
-      default: return <Dashboard />
+      case '/':
+        return <Dashboard />
+      case '/rooms':
+        return <Rooms />
+      case '/bookings':
+        return <Bookings />
+      case '/customers':
+        return (
+          <div className="p-8">
+            <h2 className="text-2xl font-bold">Customers Page</h2>
+            <p>Coming soon...</p>
+          </div>
+        )
+      case '/staff':
+        return (
+          <div className="p-8">
+            <h2 className="text-2xl font-bold">Staff Page</h2>
+            <p>Coming soon...</p>
+          </div>
+        )
+      case '/revenue':
+        return (
+          <div className="p-8">
+            <h2 className="text-2xl font-bold">Revenue Page</h2>
+            <p>Coming soon...</p>
+          </div>
+        )
+      case '/settings':
+        return (
+          <div className="p-8">
+            <h2 className="text-2xl font-bold">Settings Page</h2>
+            <p>Coming soon...</p>
+          </div>
+        )
+      default:
+        return <Dashboard />
     }
   }
 
