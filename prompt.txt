@@ -1,0 +1,26 @@
+Create a modern and scalable admin dashboard for a hotel service management system using the following frontend stack:
+
+Tech Stack:
+- React (with Vite and TypeScript)
+- Tailwind CSS
+- ShadCN UI (based on Radix UI + Tailwind)
+- TanStack Table v8 (for advanced table components with pagination, sorting, and filtering)
+- React Hook Form + Zod for form management and validation
+- TanStack Query (React Query) for server state and API data fetching
+- Zustand for simple and scalable global state management (auth, UI state, etc.)
+
+The dashboard should include:
+- Sidebar navigation: Manage rooms, bookings, customers, staff, revenue, and settings.
+- Topbar with user info and notifications.
+- Content area with data grids (TanStack Table), cards, and forms.
+- Light/Dark mode toggle support.
+- Responsive design for tablet/desktop.
+
+The project should have:
+- A clean folder structure (components, hooks, pages, stores, utils, etc.)
+- Authentication state (mock or real)
+- Example pages: Room List, Booking List (with table and filters), Customer Detail (with form)
+
+Use best practices for TypeScript, Tailwind, and component reusability. The project should be production-ready and easy to extend.
+Make sure no errors when done.
+

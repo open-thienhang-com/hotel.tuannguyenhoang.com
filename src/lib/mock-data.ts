@@ -1,0 +1,164 @@
+import { Room, Customer, Booking, Staff, DashboardStats } from '@/types'
+
+// Mock data for development
+export const mockRooms: Room[] = [
+  {
+    id: '1',
+    number: '101',
+    type: 'single',
+    status: 'available',
+    price: 100,
+    floor: 1,
+    amenities: ['WiFi', 'TV', 'AC'],
+    capacity: 1,
+    description: 'Cozy single room with city view',
+    createdAt: '2024-01-01',
+    updatedAt: '2024-01-01'
+  },
+  {
+    id: '2',
+    number: '102',
+    type: 'double',
+    status: 'occupied',
+    price: 150,
+    floor: 1,
+    amenities: ['WiFi', 'TV', 'AC', 'Minibar'],
+    capacity: 2,
+    description: 'Comfortable double room with garden view',
+    createdAt: '2024-01-01',
+    updatedAt: '2024-01-01'
+  },
+  {
+    id: '3',
+    number: '201',
+    type: 'suite',
+    status: 'available',
+    price: 300,
+    floor: 2,
+    amenities: ['WiFi', 'TV', 'AC', 'Minibar', 'Balcony', 'Jacuzzi'],
+    capacity: 4,
+    description: 'Luxury suite with panoramic city view',
+    createdAt: '2024-01-01',
+    updatedAt: '2024-01-01'
+  },
+  {
+    id: '4',
+    number: '202',
+    type: 'deluxe',
+    status: 'maintenance',
+    price: 250,
+    floor: 2,
+    amenities: ['WiFi', 'TV', 'AC', 'Minibar', 'Balcony'],
+    capacity: 3,
+    description: 'Deluxe room with premium amenities',
+    createdAt: '2024-01-01',
+    updatedAt: '2024-01-01'
+  }
+]
+
+export const mockCustomers: Customer[] = [
+  {
+    id: '1',
+    firstName: 'Alice',
+    lastName: 'Johnson',
+    email: 'alice@example.com',
+    phone: '+1234567890',
+    address: '123 Main St',
+    city: 'New York',
+    country: 'USA',
+    vip: true,
+    totalBookings: 5,
+    totalSpent: 2500,
+    createdAt: '2024-01-01',
+    updatedAt: '2024-01-01'
+  },
+  {
+    id: '2',
+    firstName: 'Bob',
+    lastName: 'Smith',
+    email: 'bob@example.com',
+    phone: '+1234567891',
+    vip: false,
+    totalBookings: 2,
+    totalSpent: 800,
+    createdAt: '2024-01-01',
+    updatedAt: '2024-01-01'
+  }
+]
+
+export const mockBookings: Booking[] = [
+  {
+    id: '1',
+    customerId: '1',
+    roomId: '2',
+    checkIn: '2024-07-20',
+    checkOut: '2024-07-25',
+    status: 'checked-in',
+    adults: 2,
+    children: 0,
+    totalAmount: 750,
+    paidAmount: 750,
+    paymentStatus: 'paid',
+    createdAt: '2024-07-15',
+    updatedAt: '2024-07-20'
+  },
+  {
+    id: '2',
+    customerId: '2',
+    roomId: '1',
+    checkIn: '2024-07-25',
+    checkOut: '2024-07-27',
+    status: 'confirmed',
+    adults: 1,
+    children: 0,
+    totalAmount: 200,
+    paidAmount: 0,
+    paymentStatus: 'pending',
+    createdAt: '2024-07-20',
+    updatedAt: '2024-07-20'
+  }
+]
+
+export const mockStaff: Staff[] = [
+  {
+    id: '1',
+    firstName: 'John',
+    lastName: 'Doe',
+    email: 'john@hotel.com',
+    phone: '+1234567892',
+    role: 'manager',
+    department: 'Operations',
+    salary: 60000,
+    hireDate: '2023-01-01',
+    status: 'active',
+    createdAt: '2023-01-01',
+    updatedAt: '2024-01-01'
+  },
+  {
+    id: '2',
+    firstName: 'Jane',
+    lastName: 'Smith',
+    email: 'jane@hotel.com',
+    phone: '+1234567893',
+    role: 'receptionist',
+    department: 'Front Desk',
+    salary: 35000,
+    hireDate: '2023-06-01',
+    status: 'active',
+    createdAt: '2023-06-01',
+    updatedAt: '2024-01-01'
+  }
+]
+
+export const mockDashboardStats: DashboardStats = {
+  totalRooms: 4,
+  occupiedRooms: 1,
+  availableRooms: 2,
+  maintenanceRooms: 1,
+  todayCheckIns: 0,
+  todayCheckOuts: 1,
+  totalRevenue: 12500,
+  monthlyRevenue: 8500,
+  occupancyRate: 75,
+  averageRate: 180
+}
