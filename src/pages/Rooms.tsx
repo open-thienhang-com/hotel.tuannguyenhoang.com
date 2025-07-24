@@ -9,6 +9,7 @@ import {
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { mockRooms } from '@/lib/mock-data'
+import { toastManager } from '@/lib/toast'
 import { Plus, Search, Bed, Edit, Trash2 } from 'lucide-react'
 
 const statusColors = {
@@ -27,6 +28,18 @@ export function Rooms() {
       room.type.toLowerCase().includes(searchTerm.toLowerCase())
   )
 
+  const handleAddRoom = () => {
+    toastManager.infoMessage('Add room feature coming soon!')
+  }
+
+  const handleEditRoom = (roomNumber: string) => {
+    toastManager.infoMessage(`Edit room ${roomNumber} feature coming soon!`)
+  }
+
+  const handleDeleteRoom = (roomNumber: string) => {
+    toastManager.warningMessage(`Are you sure you want to delete room ${roomNumber}?`, 'Delete Room')
+  }
+
   return (
     <div className="space-y-6">
       <div className="flex justify-between items-center">
@@ -36,7 +49,7 @@ export function Rooms() {
             Manage hotel rooms and their availability
           </p>
         </div>
-        <Button>
+        <Button onClick={handleAddRoom}>
           <Plus className="mr-2 h-4 w-4" />
           Add Room
         </Button>
@@ -85,10 +98,10 @@ export function Rooms() {
                     {room.status.charAt(0).toUpperCase() + room.status.slice(1)}
                   </span>
                   <div className="flex space-x-2">
-                    <Button variant="ghost" size="icon">
+                    <Button variant="ghost" size="icon" onClick={() => handleEditRoom(room.number)}>
                       <Edit className="h-4 w-4" />
                     </Button>
-                    <Button variant="ghost" size="icon">
+                    <Button variant="ghost" size="icon" onClick={() => handleDeleteRoom(room.number)}>
                       <Trash2 className="h-4 w-4" />
                     </Button>
                   </div>

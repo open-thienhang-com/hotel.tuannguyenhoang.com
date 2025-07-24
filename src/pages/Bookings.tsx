@@ -1,4 +1,4 @@
-import React from 'react'
+import { Button } from '@/components/ui/button'
 import {
   Card,
   CardContent,
@@ -6,11 +6,12 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { mockBookings, mockCustomers, mockRooms } from '@/lib/mock-data'
-import { Plus, Search, Calendar, User, Bed } from 'lucide-react'
+import { toastManager } from '@/lib/toast'
 import { format } from 'date-fns'
+import { Bed, Calendar, Plus, Search, User } from 'lucide-react'
+import React from 'react'
 
 const statusColors = {
   pending: 'bg-yellow-100 text-yellow-800',
@@ -39,6 +40,18 @@ export function Bookings() {
         .includes(searchTerm.toLowerCase()) ||
       booking.room?.number.includes(searchTerm)
   )
+
+  const handleNewBooking = () => {
+    toastManager.infoMessage('New booking form will open soon!')
+  }
+
+  const handleConfirmBooking = (bookingId: string, customerName: string) => {
+    toastManager.successMessage(`Booking confirmed for ${customerName}`, 'Booking Confirmed')
+  }
+
+  const handleCancelBooking = (bookingId: string, customerName: string) => {
+    toastManager.errorMessage(`Booking cancelled for ${customerName}`, 'Booking Cancelled')
+  }
 
   return (
     <div className="space-y-6">

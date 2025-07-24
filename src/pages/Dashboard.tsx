@@ -5,16 +5,28 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
 import { mockDashboardStats } from '@/lib/mock-data'
+import { toastManager } from '@/lib/toast'
 import {
   Bed,
   Calendar,
   DollarSign,
-  TrendingUp
+  TrendingUp,
+  RefreshCw
 } from 'lucide-react'
 
 export function Dashboard() {
   const stats = mockDashboardStats
+
+  const handleRefreshData = () => {
+    toastManager.infoMessage('Refreshing dashboard data...')
+    
+    // Simulate data refresh
+    setTimeout(() => {
+      toastManager.successMessage('Dashboard data updated successfully!')
+    }, 1500)
+  }
 
   const statCards = [
     {
@@ -45,11 +57,17 @@ export function Dashboard() {
 
   return (
     <div className="space-y-6">
-      <div>
-        <h2 className="text-3xl font-bold tracking-tight">Dashboard</h2>
-        <p className="text-muted-foreground">
-          Overview of your hotel management system
-        </p>
+      <div className="flex items-center justify-between">
+        <div>
+          <h2 className="text-3xl font-bold tracking-tight">Dashboard</h2>
+          <p className="text-muted-foreground">
+            Overview of your hotel management system
+          </p>
+        </div>
+        <Button onClick={handleRefreshData} className="ml-auto">
+          <RefreshCw className="h-4 w-4 mr-2" />
+          Refresh Data
+        </Button>
       </div>
 
       {/* Stats Cards */}

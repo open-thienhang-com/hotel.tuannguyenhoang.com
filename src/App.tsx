@@ -3,12 +3,16 @@ import { Layout } from '@/components/layout/Layout'
 import { Dashboard } from '@/pages/Dashboard'
 import { Rooms } from '@/pages/Rooms'
 import { Bookings } from '@/pages/Bookings'
+import { Login } from '@/components/auth/Login'
+import { Toaster } from '@/components/ui/toaster'
 import { useUIStore } from '@/stores/ui'
+import { useAuthStore } from '@/stores/auth'
 import '@/index.css'
 
 function App() {
   const [currentPath, setCurrentPath] = useState('/')
   const { theme } = useUIStore()
+  const { isAuthenticated } = useAuthStore()
 
   useEffect(() => {
     // Apply theme to document
@@ -18,6 +22,16 @@ function App() {
       document.documentElement.classList.remove('dark')
     }
   }, [theme])
+
+  // Show login if not authenticated
+  if (!isAuthenticated) {
+    return (
+      <>
+        <Login />
+        <Toaster />
+      </>
+    )
+  }
 
   const getPageTitle = (path: string) => {
     switch (path) {
@@ -82,13 +96,16 @@ function App() {
   }
 
   return (
-    <Layout
-      title={getPageTitle(currentPath)}
-      currentPath={currentPath}
-      onNavigate={setCurrentPath}
-    >
-      {renderPage()}
-    </Layout>
+    <>
+      <Layout
+        title={getPageTitle(currentPath)}
+        currentPath={currentPath}
+        onNavigate={setCurrentPath}
+      >
+        {renderPage()}
+      </Layout>
+      <Toaster />
+    </>
   )
 }
 
