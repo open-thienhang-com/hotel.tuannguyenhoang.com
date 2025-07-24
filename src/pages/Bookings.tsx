@@ -8,7 +8,6 @@ import {
 } from '@/components/ui/card'
 import { Input } from '@/components/ui/input'
 import { mockBookings, mockCustomers, mockRooms } from '@/lib/mock-data'
-import { toastManager } from '@/lib/toast'
 import { format } from 'date-fns'
 import { Bed, Calendar, Plus, Search, User } from 'lucide-react'
 import React from 'react'
@@ -41,17 +40,17 @@ export function Bookings() {
       booking.room?.number.includes(searchTerm)
   )
 
-  const handleNewBooking = () => {
-    toastManager.infoMessage('New booking form will open soon!')
-  }
+  // const handleNewBooking = () => {
+  //   toastManager.infoMessage('New booking form will open soon!')
+  // }
 
-  const handleConfirmBooking = (bookingId: string, customerName: string) => {
-    toastManager.successMessage(`Booking confirmed for ${customerName}`, 'Booking Confirmed')
-  }
+  // const handleConfirmBooking = (bookingId: string, customerName: string) => {
+  //   toastManager.successMessage(`Booking confirmed for ${customerName}`, 'Booking Confirmed')
+  // }
 
-  const handleCancelBooking = (bookingId: string, customerName: string) => {
-    toastManager.errorMessage(`Booking cancelled for ${customerName}`, 'Booking Cancelled')
-  }
+  // const handleCancelBooking = (bookingId: string, customerName: string) => {
+  //   toastManager.errorMessage(`Booking cancelled for ${customerName}`, 'Booking Cancelled')
+  // }
 
   return (
     <div className="space-y-6">
